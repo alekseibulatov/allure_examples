@@ -53,6 +53,18 @@ dependencies {
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.9.2')
 }
 
+task smoke(type: Test) {
+    useJUnitPlatform {
+        includeTags("smoke")
+    }
+}
+
+task ui(type: Test) {
+    useJUnitPlatform {
+        includeTags("ui")
+    }
+}
+
 test {
     useJUnitPlatform()
 }
