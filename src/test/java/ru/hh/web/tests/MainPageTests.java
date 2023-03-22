@@ -25,4 +25,13 @@ public class MainPageTests extends TestBase {
         mainPage.openPage()
                 .checkTextHeaderPromo();
     }
+    @Test
+    @Owner("alekseibulatov")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Проверка видимости QR кода загрузки приложения на главной странице")
+    @Tag("ui")
+    void checkingQrCodeAppVisible() {
+        mainPage.checkTextDownloadApp()
+                .checkQrCodeAppVisible();
+    }
 }
