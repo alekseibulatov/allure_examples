@@ -23,15 +23,24 @@ public class MainPageTests extends TestBase {
     @Tags({@Tag("ui"), @Tag("smoke")})
     void checkingElementsOnMainPage() {
         mainPage.openPage()
-                .checkTextHeaderPromo();
+                .checkTextElement(mainPage.headerPromo, mainPage.headerPromoText);
     }
+
+    @Test
+    @Owner("alekseibulatov")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Проверка видимости текста  для  QR кода загрузки приложения на главной странице")
+    @Tag("ui")
+    void checkingTextQrCodeAppVisible() {
+        mainPage.checkTextElement(mainPage.blokoHeader, mainPage.blokoHeaderText);
+    }
+
     @Test
     @Owner("alekseibulatov")
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверка видимости QR кода загрузки приложения на главной странице")
     @Tag("ui")
     void checkingQrCodeAppVisible() {
-        mainPage.checkTextDownloadApp()
-                .checkQrCodeAppVisible();
+        mainPage.checkQrCodeAppVisible();
     }
 }

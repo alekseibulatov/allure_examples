@@ -9,13 +9,12 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class MainPage {
 
-    private SelenideElement
+    public SelenideElement
             headerPromo = $(".bloko-header-promo-3"),
-            qrCodeText = $(".footer-mobile-banner-qr-code--eHrP3ykySgVonlzfRteG"),
             blokoHeader = $(".bloko-header-1_lite"),
             qrCode = $(".footer-mobile-banner-qr-code--eHrP3ykySgVonlzfRteG");
 
-    private String
+    public String
             headerPromoText = "Работа найдется для каждого",
             blokoHeaderText = "Скачайте приложение";
 
@@ -26,16 +25,9 @@ public class MainPage {
         return this;
     }
 
-    @Step("Провека наличия текста в хеадер промо")
-    public MainPage checkTextHeaderPromo() {
-        headerPromo.shouldBe(Condition.text(headerPromoText));
-
-        return this;
-    }
-
-    @Step("Проверка наличия текста Скачайте приложение")
-    public MainPage checkTextDownloadApp() {
-        qrCodeText.shouldBe(Condition.text(blokoHeaderText));
+    @Step("Проверка наличия текста  {text} в элементе {element}")
+    public MainPage checkTextElement(SelenideElement element, String text) {
+        element.shouldBe(Condition.text(text));
 
         return this;
     }
@@ -46,5 +38,4 @@ public class MainPage {
 
         return this;
     }
-
 }
