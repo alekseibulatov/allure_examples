@@ -19,7 +19,7 @@ public class MainPageTests extends TestBase {
     @Test
     @Owner("alekseibulatov")
     @Severity(SeverityLevel.BLOCKER)
-    @DisplayName("Главная страница сайта загружена ")
+    @DisplayName("Проверка наличия элементов на главной странице")
     @Tags({@Tag("ui"), @Tag("smoke")})
     void checkingElementsOnMainPage() {
         mainPage.openPage()
@@ -29,7 +29,7 @@ public class MainPageTests extends TestBase {
     @Test
     @Owner("alekseibulatov")
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("Проверка видимости текста  для  QR кода загрузки приложения на главной странице")
+    @DisplayName("Проверка видимости текста  для  QR кода  на главной странице")
     @Tag("ui")
     void checkingTextQrCodeAppVisible() {
         mainPage.checkTextElement(mainPage.blokoHeader, mainPage.blokoHeaderText);

@@ -32,7 +32,7 @@ public class MainPage {
         return this;
     }
 
-    @Step("Проверка видимости QR кода ")
+    @Step("Проверка видимости QR кода на главной странице ")
     public MainPage checkQrCodeAppVisible() {
         qrCode.shouldBe(Condition.visible);
 

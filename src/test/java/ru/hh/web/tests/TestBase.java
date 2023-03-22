@@ -10,12 +10,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import ru.hh.helpers.Attach;
 import ru.hh.web.pages.MainPage;
-import ru.hh.web.pages.SearchPage;
 
 public class TestBase {
 
     MainPage mainPage = new MainPage();
-    SearchPage searchPageTests = new SearchPage();
 
     @Step("Выполняем настройку запуска")
     @BeforeAll
